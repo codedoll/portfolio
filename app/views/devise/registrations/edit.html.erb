@@ -31,6 +31,10 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+ <div class="field">
+    username: <%= @current_user.username %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
