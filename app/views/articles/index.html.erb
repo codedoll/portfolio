@@ -1,20 +1,20 @@
-<h1>Listing articles</h1>
- <%= link_to 'New article', new_article_path %>
+<h1><%= @user.username %>'s posts</h1>
+ <%= link_to 'New article', new_article_path, class: "btn btn-primary" %>
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Author</th>
   </tr>
  
   <% @articles.each do |article| %>
     <tr>
       <td><%= link_to article.title, article_path(article)%></td>
-      <td><%= article.username %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= article.created_at.strftime("%m/%d/%Y") %></td>
+      <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary"%></td>
       <td><%= link_to 'Delete', article_path(article),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' },
+              class: "btn btn-warning" %></td>
     </tr>
   <% end %>
 </table>

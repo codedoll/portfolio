@@ -1,2 +1,18 @@
-<h1>Hello, Rails!</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<h1>Web Dev Club</h1>
+ <%= link_to 'New post', new_article_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= link_to article.title, article_path(article)%></td>
+      <td><%= article.username %></td>
+      <td><%= article.created_at.strftime("%m/%d/%Y") %></td>
+
+    </tr>
+  <% end %>
+</table>
