@@ -12,10 +12,11 @@
   </p>
 
   <p>
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
+
+    <%= f.hidden_field :username, :value => @user.username %>
+
   </p>
- 
+
   <p>
     <%= f.submit %>
   </p>
