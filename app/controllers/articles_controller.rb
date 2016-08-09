@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
 	end
 
   def edit
+    @user = current_user
     @article = Article.find(params[:id])
   end
 
